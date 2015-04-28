@@ -1,0 +1,26 @@
+<h3>
+	<strong> Band name: </strong>
+	<%= @concert.band_name %>
+</h3>
+<p>
+	<strong> Venue: </strong>
+	<%= @concert.venue %>
+</p>
+<p>
+	<strong> City: </strong>
+	<%= @concert.city %>
+</p>
+<p>
+	<strong> Date: </strong>
+	<%= @concert.date %>
+</p>
+<p>
+	<strong> Price: </strong>
+	<%= @concert.price %>
+</p>
+<p>
+	<strong> Description: </strong>
+	<%= @concert.description %>
+</p>
+<%= link_to "Edit concert", edit_concert_path(@concert) %>
+<%= link_to "Concerts page", concerts_path %>
