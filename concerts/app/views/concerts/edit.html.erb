@@ -1,31 +1,44 @@
-<h1> Editing concert </h1>
+<div style = "background-color:#9d9d9d; color:#fff; width: 60%; margin: 0 20%">
+<h1 style = "text-align:center">Editing Concert</h1>
+</div>
+
+
+<div style = "box-shadow: 10px 10px 5px #888888; float:center; width: 60%; margin: 0 20%">
+
 <%= form_for :concert, url: concert_path(@concert), method: :patch do |f| %>
-	<p>
-		<%= f.label :band_name %><br>
-		<%= f.text_field :band_name %>
-	</p>
-	<p>
-		<%= f.label :venue %><br>
-		<%= f.text_field :venue %>
-	</p>
-	<p>
-		<%= f.label :city %><br>
-		<%= f.text_field :city %>
-	</p>
-	<p>
-		<%= f.label :date %><br>
-		<%= f.text_field :date %>
-	</p>
-	<p>
-		<%= f.label :price %><br>
-		<%= f.text_field :price %>
-	</p>
-	<p>
-		<%= f.label :description %><br>
-		<%= f.text_area :description %>
-	</p>
-	<p>
-		<%= f.submit %>
-	</p>
+  <p>
+    <%= f.label :band_name %><br>
+    <%= f.text_field :band_name %>
+  </p>
+
+  <p>
+    <%= f.label :venue %><br>
+    <%= f.text_field :venue %>
+  </p>
+
+  <p>
+    <%= f.label :city %><br>mayo
+    <%= f.text_field :city %>
+  </p>
+
+  <p>
+    <%= f.label :date %><br>mayo
+    <%= f.date_select :date %>
+  </p>
+
+  <p>
+    <%= f.label :price %><br>
+    <%= f.number_field :price %> euros
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p><br>
 <% end %>
-<%= link_to "Concerts page", concerts_path %>
+
+</div>
+<br>
+
+<div style = "margin: 0 20%">
+<%= link_to 'Back', concert_path(@concert) %> <%= link_to 'Home', concerts_path %>
+</div>

@@ -4,7 +4,7 @@ class CreateConcerts < ActiveRecord::Migration
       t.string :band_name
       t.string :venue
       t.string :city
-      t.string :date
+      t.date :date
       t.float :price
       t.text :description
 
