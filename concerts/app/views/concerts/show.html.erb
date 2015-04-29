@@ -1,3 +1,4 @@
+<h1> <%= @concert.band_name %> </h1>
 <h3>
 	<strong> Band name: </strong>
 	<%= @concert.band_name %>
@@ -24,3 +25,5 @@
 </p>
 <%= link_to "Edit concert", edit_concert_path(@concert) %>
 <%= link_to "Concerts page", concerts_path %>
+
+<button type='button' id='like-button'> Like </button> <%= @concert.likes %>

@@ -26,6 +26,11 @@ class ConcertsController < ApplicationController
 		@concert.destroy
 		redirect_to concerts_path
 	end
+	# El metodo like no está bien, hay que investigar la manera de hacerlo. Es decir, está realizado
+	# hasta el párrafo que empieza: "Now go to your concert controller... " en la plataforma.
+	def like
+		@concert.likes += 1
+	end
 	private
 		def concert_params
 			params.require(:concert).permit(:band_name, :venue, :city, :date, :price, :description)
