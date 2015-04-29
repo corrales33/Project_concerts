@@ -33,4 +33,6 @@
 <%= link_to 'Back', concerts_path %>
 <%= link_to 'Edit', edit_concert_path(@concert)%>
 <%= link_to 'Destroy', concert_path(@concert), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= button_to "Like", concert_path, :controller => :concerts, :action => :like, :method => "get" %>
+<%= @concert.likes %>
 </div>
