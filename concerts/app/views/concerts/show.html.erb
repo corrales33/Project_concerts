@@ -1,29 +1,30 @@
-<h1> <%= @concert.band_name %> </h1>
-<h3>
-	<strong> Band name: </strong>
-	<%= @concert.band_name %>
-</h3>
+
+
+
+
+
+<div style = "background-color:#9d9d9d; width: 60%; margin: 0 20%; box-shadow: 10px 10px 5px #888888" >
+
+
+<h1 style = "color: #fff; text-align: center">
+<%= @concert.band_name %>
+</h1>
+
+<div style = "background-color: #d1d1d1">
+<p>Venue: <b><%= @concert.venue %>></b> | City: <b><%= @concert.city %></b> |
+	Date: <b> <%= @concert.date %></b> | <%= @concert.price %> euros</p>
+
+</div>
+
+
+
+<div style = "background-color: #fff">
 <p>
-	<strong> Venue: </strong>
-	<%= @concert.venue %>
-</p>
-<p>
-	<strong> City: </strong>
-	<%= @concert.city %>
-</p>
-<p>
-	<strong> Date: </strong>
-	<%= @concert.date %>
-</p>
-<p>
-	<strong> Price: </strong>
-	<%= @concert.price %>
-</p>
-<p>
-	<strong> Description: </strong>
-	<%= @concert.description %>
+<%= @concert.description %>
 </p>
 <%= link_to "Edit concert", edit_concert_path(@concert) %>
 <%= link_to "Concerts page", concerts_path %>
-<%= button_to "Like", concert_path, :controller => :concerts, :action => :like, :method => "get" %>
-<%= @concert.likes %>
+
+<input type='button' id='like-button' onClick="likeConcert()" value='Like'></input>
+</div>
+

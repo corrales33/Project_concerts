@@ -1,2 +1,12 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+button = document.getElementById('like-button')
+button.addEventListener('click', likeConcert, false)
+
+var i = 0;
+
+function likeConcert () {
+
+ 	i++;
+
+ 	console.log(i)
+}
+

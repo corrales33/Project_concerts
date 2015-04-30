@@ -26,9 +26,8 @@ class ConcertsController < ApplicationController
 		@concert.destroy
 		redirect_to concerts_path
 	end
-	# El metodo like no está bien. Falta conseguir que sume los likes porque que el like sea un link a mi me funciona.
 	def like
-		@concert.likes += 1
+		
 	end
 	private
 		def concert_params
