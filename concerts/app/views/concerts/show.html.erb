@@ -25,5 +25,5 @@
 </p>
 <%= link_to "Edit concert", edit_concert_path(@concert) %>
 <%= link_to "Concerts page", concerts_path %>
-
-<button type='button' id='like-button'> Like </button> <%= @concert.likes %>
+<%= button_to "Like", concert_path, :controller => :concerts, :action => :like, :method => "get" %>
+<%= @concert.likes %>
