@@ -1,10 +1,63 @@
-<h1>Listing Concerts</h1>
-	<% @concerts.each do |concert| %>
-	<div><%= concert.band_name %> <%= concert.city %> <%= concert.date %> <%= link_to "Show concert", concert_path(concert) %>
-		<%= link_to "Edit concert", edit_concert_path(concert) %>
-		<%= link_to "Delete concert", concert_path(concert), method: :delete, data: { confirm: "Are you sure?"} %>
-	</div>
-	<%end%>
-<p>
-	<%= link_to "New concert", new_concert_path %>
-</p>
+<div style = "width: 60%; margin: 0 20%; background-color: #9d9d9d">
+
+<div style = "width: 40%; display: inline-block; top: 0px;">
+<h3 style = "margin: 0 1em;">This week</h3>
+
+<% @concerts.each do |concert| %>
+	<% if concert.date.month == Date.today.month %>
+		<div class = "item" style = "background-color: #d1d1d1; border-radius: 5px; margin-bottom: 2px; margin: 0 1em;">
+	<p><%= concert.band_name %> | <%= concert.date %> , <%= concert.city %>
+		<%= link_to "See", concert_path(concert) %>
+	</p></div>
+	<% end %>
+<% end %>
+
+
+<!--
+<div class = "item" style = "background-color: #d1d1d1; border-radius: 5px; margin-bottom: 2px;">
+	<p>Test1 | 00/00/00, Madrid</p></div>
+<div class = "item" style = "background-color: #d1d1d1; border-radius: 5px; margin-bottom: 2px">
+	<p>Test2 | 00/00/00, Madrid</p></div>
+<div class = "item" style = "background-color: #d1d1d1; border-radius: 5px; margin-bottom: 2px">
+	<p>Test3 | 00/00/00, Madrid</p></div>
+-->
+
+
+</div>
+
+
+
+
+
+
+
+<div style = "width: 55%; display: inline-block; margin-top: 0px">
+<h3>Concerts</h3>
+
+<% @concerts.each do |concert| %>
+<div class = "item" style = "background-color: #d1d1d1; border-radius: 5px; margin-bottom: 2px">
+	<p>
+	<%= concert.band_name %> | <%= concert.date %> , <%= concert.city %>
+	<%= link_to "See", concert_path(concert) %>
+	</p>
+</div>
+<% end %>
+
+
+
+
+<!--<div class = "item" style = "background-color: #d1d1d1; border-radius: 5px; margin-bottom: 2px">
+	<p>Muse | 00/00/00, Madrid</p></div>
+<div class = "item" style = "background-color: #d1d1d1; border-radius: 5px; margin-bottom: 2px">
+	<p>Muse | 00/00/00, Madrid</p></div>
+<div class = "item" style = "background-color: #d1d1d1; border-radius: px; margin-bottom: 2px">
+	<p>Muse | 00/00/00, Madrid</p></div>
+<div class = "item" style = "background-color: #d1d1d1; border-radius: 5px; margin-bottom: 2px">
+	<p>Muse | 00/00/00, Madrid</p></div>-->
+</div>
+
+<div style = "margin: 1em">
+<%= link_to "Add concert", new_concert_path %>
+</div>
+
+</div>
