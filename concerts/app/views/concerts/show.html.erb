@@ -11,7 +11,7 @@
 </h1>
 
 <div style = "background-color: #d1d1d1">
-<p>Venue: <b><%= @concert.venue %>></b> | City: <b><%= @concert.city %></b> |
+<p>Venue: <b><%= @concert.venue %></b> | City: <b><%= @concert.city %></b> |
 	Date: <b> <%= @concert.date %></b> | <%= @concert.price %> euros</p>
 
 </div>
@@ -22,9 +22,13 @@
 <p>
 <%= @concert.description %>
 </p>
+
+</div>
+
+<div style = "margin: 1em">
 <%= link_to "Edit concert", edit_concert_path(@concert) %>
 <%= link_to "Concerts page", concerts_path %>
-
 <input type='button' id='like-button' onClick="likeConcert()" value='Like'></input>
 </div>
 
+</div>
