@@ -1,3 +1,11 @@
+<div style = "background-color:#9d9d9d; color:#fff; width: 60%; margin: 0 20%">
+<h1 style = "text-align:center">New Concert</h1>
+</div>
+
+
+<div style = "box-shadow: 10px 10px 5px #888888; float:center; width: 60%; margin: 0 20%">
+
+<div style = "margin: 0 30%">
 <%= form_for @concert do |f| %>
 	<p>
 		<%= f.label :band_name %><br>
@@ -26,5 +34,13 @@
 	<p>
 		<%= f.submit %>
 	</p>
+	<br>
 <% end %>
-<%= link_to "Concerts page", concerts_path %>
+</div>
+
+</div>
+<br>
+
+<div style = "margin: 0 20%">
+	<%= link_to "Concerts page", concerts_path %>
+</div>

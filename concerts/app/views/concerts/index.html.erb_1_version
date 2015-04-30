@@ -1,0 +1,10 @@
+<h1>Listing Concerts</h1>
+	<% @concerts.each do |concert| %>
+	<div><%= concert.band_name %> <%= concert.city %> <%= concert.date %> <%= link_to "Show concert", concert_path(concert) %>
+		<%= link_to "Edit concert", edit_concert_path(concert) %>
+		<%= link_to "Delete concert", concert_path(concert), method: :delete, data: { confirm: "Are you sure?"} %>
+	</div>
+	<%end%>
+<p>
+	<%= link_to "New concert", new_concert_path %>
+</p>
