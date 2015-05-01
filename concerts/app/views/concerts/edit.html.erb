@@ -6,6 +6,14 @@
 <div style = "box-shadow: 10px 10px 5px #888888; float:center; width: 60%; margin: 0 20%">
 
 <%= form_for :concert, url: concert_path(@concert), method: :patch do |f| %>
+<% if @concert.errors.any? %>
+     <h2> There are empty fields: </h2>
+     <ul>
+       <% @concert.errors.full_messages.each do |message| %>
+         <li> <%= message %> </li>
+       <% end%>
+     </ul>
+   <% end %>
   <p>
     <%= f.label :band_name %><br>
     <%= f.text_field :band_name %>
@@ -23,8 +31,6 @@
 
   <p>
     <%= f.label :date %><br>
-
-    <%= f.date_select :date %> mayo
 
     <%= f.date_select :date %>
   </p>

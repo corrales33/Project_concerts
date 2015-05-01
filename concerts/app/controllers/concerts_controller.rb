@@ -13,8 +13,12 @@ class ConcertsController < ApplicationController
 	end
 	def create
 		@concert = Concert.new(concert_params)
-		@concert.save
+		
+		if @concert.save
 		redirect_to concert_path(@concert)
+		else 
+		render :new
+		end
 	end
 	def update
 		@concert = Concert.find(params[:id])
@@ -26,8 +30,9 @@ class ConcertsController < ApplicationController
 		@concert.destroy
 		redirect_to concerts_path
 	end
-	def like
-		
+	def like #esto sigue estando mal, hay que arreglarlo algo para que cuente
+		@concert = Concert.find(params[:post_id])
+		@like = @concert.likes.count(params[:like])
 	end
 	private
 		def concert_params
