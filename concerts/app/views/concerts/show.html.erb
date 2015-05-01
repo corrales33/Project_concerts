@@ -28,7 +28,15 @@
 <div style = "margin: 1em">
 <%= link_to "Edit concert", edit_concert_path(@concert) %>
 <%= link_to "Concerts page", concerts_path %>
-<input type='button' id='like-button' value='Like'></input>
+<!-- este botón habría que convertirlo en el link like pero no se me ocurre como -->
+<input type='button' id='like-button' value='Like' ></input>
+<p>  
+     <%= link_to "like", :controller => :concerts, :action => :like %>
+</p>    
+<p>
+     <strong>Likes:</strong>
+     <%= @concert.likes %>
+</p> 
 
 </div>
 

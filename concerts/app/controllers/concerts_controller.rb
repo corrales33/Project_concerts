@@ -30,10 +30,12 @@ class ConcertsController < ApplicationController
 		@concert.destroy
 		redirect_to concerts_path
 	end
-	def like #esto sigue estando mal, hay que arreglarlo algo para que cuente
-		@concert = Concert.find(params[:post_id])
-		@like = @concert.likes.count(params[:like])
-	end
+	def like
+       	@concert = Concert.find(params[:id])
+      	@concert.likes += 1
+       	@concert.save        
+       	redirect_to concert_path(@concert)
+   	end 
 	private
 		def concert_params
 			params.require(:concert).permit(:band_name, :venue, :city, :date, :price, :description)
