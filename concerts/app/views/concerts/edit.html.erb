@@ -49,5 +49,7 @@
 <br>
 
 <div style = "margin: 0 20%">
-<%= link_to 'Back', concert_path(@concert) %> <%= link_to 'Home', concerts_path %>
+<%= link_to 'Back', concert_path(@concert) %>
+<%= link_to 'Home', concerts_path %>
+<%= link_to 'Delete', concert_path(@concert), method: :delete, data: { confirm: 'Are you sure?' } %>
 </div>
