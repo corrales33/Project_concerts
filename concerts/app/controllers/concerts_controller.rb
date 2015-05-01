@@ -35,7 +35,10 @@ class ConcertsController < ApplicationController
       	@concert.likes += 1
        	@concert.save        
        	redirect_to concert_path(@concert)
-   	end 
+   	end
+   	def topten
+   		@top_ten = Concert.order(:likes).reverse_order.limit(10)
+   	end
 	private
 		def concert_params
 			params.require(:concert).permit(:band_name, :venue, :city, :date, :price, :description)
