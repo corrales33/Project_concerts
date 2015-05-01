@@ -30,7 +30,6 @@
 <%= link_to "Edit", edit_concert_path(@concert) %>
 <%= link_to 'Delete', concert_path(@concert), method: :delete, data: { confirm: 'Are you sure?' } %>
 
-<!-- Enlace a like dentro de un span con apariencia de botón... no es la solución -->
 <span type='button' id='like-button' value='Like' >
 <%= link_to "like", :controller => :concerts, :action => :like %>
 </span>
