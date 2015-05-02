@@ -6,7 +6,7 @@ Top 10
 </h1>
 
 <% i = 1 %>
-<%= @top_ten.each do |concert| %>
+<% @top_ten.each do |concert| %>
 
 <div style = "background-color: #d1d1d1; margin: 1em 20%;">
 <p style = "font-size: 3ex; text-align: center;"><b><span><%= i %>#</span>
@@ -14,14 +14,15 @@ Top 10
 <p style = "text-align: center"><%= concert.likes %> likes</p>
 </div>
 
+
 <% i += 1%>
 <% end %>
 
 
 
-
-<div style = "margin: 1em;">
+<div style = "margin: 1em 20%;">
 <%= link_to "Back", concerts_path %>
 </div>
+<br>
 
 </div>
